@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int selctionsort(int arr[],int n)
+{
+    for(int i=0;i<n-1;i++)
+    {
+       int min=i;
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[j]<arr[min])
+            {
+                min=j;
+            }
+        }
+        if(min!=i)
+        {
+        int temp=arr[min];
+        arr[min]=arr[i];
+        arr[i]=temp;
+        }
+    }
+        cout<<"sorted array:";
+        for(int i=0;i<n;i++)
+        {
+            cout<<arr[i];
+        }
+}
+int main()
+{
+    int arr[10];
+    int n;
+   printf("entert the no of ele");
+   scanf("%d",&n);
+   for(int i=0;i<n;i++)
+   {
+       scanf("%d",&arr[i]);
+   }
+    
+    selctionsort(arr,n);
+}
+
